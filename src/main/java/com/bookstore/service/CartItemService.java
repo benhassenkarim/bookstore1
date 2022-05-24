@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import com.bookstore.domain.Book;
 import com.bookstore.domain.CartItem;
+import com.bookstore.domain.Order;
 import com.bookstore.domain.ShoppingCart;
 import com.bookstore.domain.User;
 
@@ -18,6 +19,10 @@ public interface CartItemService {
 Optional<CartItem> findById(Long id);
 	
 	void removeCartItemById(CartItem cartItem);
+
+	CartItem save(CartItem cartItem);
+
+	List<CartItem> findByOrder(Order order);
 	
 	
 }

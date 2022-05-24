@@ -46,7 +46,7 @@
 							<div class="row">
 								<div class="col-xs-7 text-left">Estimated tax:</div>
 								<div class="col-xs-5 text-right">
-									$<span th:with="tax=${shoppingCart.grandTotal*0.06}"
+								$<span th:with="tax=${shoppingCart.grandTotal*0.06}"
 											th:text="${#numbers.formatDecimal(tax, 0 ,2)}"></span>
 								</div>
 							</div>
@@ -142,7 +142,7 @@
 											<div class="form-group">
 												<label for="shippingState">* State</label> <select
 													id="shippingState" class="form-control"
-													th:name="shippingAddresstate"
+													th:name="shippingAddressState"
 													th:value="${shippingAddress.shippingAddressState}"
 													required="required">
 													<option value="" disabled="disabled">Please select
@@ -323,12 +323,13 @@
 													required="required"
 													th:value="${billingAddress.billingAddressCity}" />
 											</div>
+											
 										</div>
 										<div class="col-xs-4">
 											<div class="form-group">
 												<label for="billingState">* State</label> <select
 													id="billingState" class="form-control billingAddress"
-													th:name="billingAddress"
+													th:name="billingAddressState"
 													th:value="${billingAddress.billingAddressState}"
 													required="required">
 													<option value="" disabled="disabled">Please select
@@ -458,7 +459,7 @@
 	</div>
 	<!-- end of container -->
 
-
+<div th:replace="common/header :: footer"/>
 	<div th:replace="common/header :: body-bottom-scripts" />
 </body>
 </html>

@@ -2,6 +2,7 @@ package com.bookstore.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -144,6 +145,12 @@ public class UserServiceImpl implements UserService{
 				userShippingRepository.save(userShipping);
 			}
 		}
+	}
+
+	@Override
+	public Optional<User> findById(Long id) {
+		
+		return userRepository.findById(id);
 	}
 
 }

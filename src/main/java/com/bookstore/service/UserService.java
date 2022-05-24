@@ -1,5 +1,6 @@
 package com.bookstore.service;
 
+import java.util.Optional;
 import java.util.Set;
 
 import com.bookstore.domain.User;
@@ -29,4 +30,6 @@ public interface UserService {
 	void setUserDefaultPayment(Long userPaymentId, User user);
 	
 	void setUserDefaultShipping(Long userShippingId, User user);
+
+	Optional<User> findById(Long id);
 }
